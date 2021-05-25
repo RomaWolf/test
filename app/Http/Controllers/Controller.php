@@ -22,7 +22,7 @@ class Controller extends BaseController
     public function calculate(Request $request)
     {
         $data = $request->validate([
-            'a' => ['required', 'integer', Rule::notIn([0])],
+            'a' => 'required|integer|lt:0|gt:0',
             'b' => 'required|integer',
             'c' => 'required|integer',
         ]);
